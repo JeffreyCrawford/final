@@ -4,7 +4,10 @@
   "description": "Grant Management System",
   "main": "index.js",
   "dependencies": {
+    "eslint": "^5.0.1",
     "express": "^4.16.3",
+    "react-router-dom": "^4.3.1",
+    "react-text-mask": "^5.4.2",
     "sequelize": "^4.38.0",
     "typeface-roboto": "^0.0.54"
   },
