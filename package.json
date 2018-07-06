@@ -1,0 +1,25 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "Grant Management System",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "sequelize": "^4.38.0",
+    "typeface-roboto": "^0.0.54"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffreyCrawford/final.git"
+  },
+  "author": "Jeff Crawford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffreyCrawford/final/issues"
+  },
+  "homepage": "https://github.com/JeffreyCrawford/final#readme"
+}
