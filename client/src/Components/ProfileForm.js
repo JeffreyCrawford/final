@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import MaskedInput from 'react-text-mask';
-import FormControl from '@material-ui/core/FormControl';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 
@@ -23,9 +20,6 @@ const styles = theme => ({
   },
 
 });
-
-
-
 
 
 
@@ -52,7 +46,7 @@ class ProfileForm extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { textmask } = this.state;
+
     return (
       <form className={classes.container} noValidate autoComplete="off">
         <ListItem>
