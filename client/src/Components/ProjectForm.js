@@ -40,6 +40,7 @@ class ProjectForm extends React.Component {
         siteName: "",
         siteAddress: "",
         siteCity: "",
+        siteState: "",
         siteZip: "",
         signature: "",
         date: "",
@@ -59,6 +60,7 @@ class ProjectForm extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
+      
         <ListItem>
             <TextField
                 required
@@ -94,10 +96,7 @@ class ProjectForm extends React.Component {
             />
         </ListItem>
 
-        <Divider />
-
         <ListItem>
-
             <TextField
                 required
                 id="projectName"
@@ -112,7 +111,7 @@ class ProjectForm extends React.Component {
             <TextField
                 required
                 id="category"
-                label="Category"
+                label="Project Category"
                 className={classes.textField}
                 value={this.state.category}
                 onChange={this.handleChange('category')}
@@ -120,59 +119,187 @@ class ProjectForm extends React.Component {
                 margin="normal"
             />
 
-
             <TextField
                 required
-                id="address"
-                label="Community Mailing Address"
+                id="authorize"
+                label="Check to Authorize Account Access"
                 className={classes.textField}
-                value={this.state.address}
-                onChange={this.handleChange('address')}
+                value={this.state.authorize}
+                onChange={this.handleChange('authorize')}
                 style = {{width: 300}}
                 margin="normal"
             />
-
         </ListItem>
 
         <ListItem>
-
             <TextField
                 required
-                id="city"
-                label="City"
+                id="fundsRequested"
+                label="Grant Funds Requested"
                 className={classes.textField}
-                value={this.state.city}
-                onChange={this.handleChange('city')}
+                value={this.state.fundsRequested}
+                onChange={this.handleChange('fundsRequested')}
                 style = {{width: 300}}
                 margin="normal"
             />
 
             <TextField
                 required
-                id="state"
-                label="State"
+                id="additionalFunds"
+                label="Additional Funds Approved"
                 className={classes.textField}
-                value={this.state.state}
-                onChange={this.handleChange('state')}
+                value={this.state.additionalFunds}
+                onChange={this.handleChange('additionalFunds')}
                 style = {{width: 300}}
                 margin="normal"
             />
 
             <TextField
                 required
-                id="zip"
-                label="Zip Code"
+                id="totalCost"
+                label="Total Project Cost"
                 className={classes.textField}
-                value={this.state.zip}
-                onChange={this.handleChange('zip')}
+                value={this.state.totalCost}
+                onChange={this.handleChange('totalCost')}
                 style = {{width: 300}}
                 margin="normal"
             />
         </ListItem>
 
+        <ListItem>
+            <TextField
+                required
+                id="startDate"
+                label="Estimated Start Date"
+                className={classes.textField}
+                value={this.state.startDate}
+                onChange={this.handleChange('startDate')}
+                style = {{width: 457.5}}
+                margin="normal"
+            />
 
+            <TextField
+                required
+                id="endDate"
+                label="Estimated End Date"
+                className={classes.textField}
+                value={this.state.endDate}
+                onChange={this.handleChange('endDate')}
+                style = {{width: 457.5}}
+                margin="normal"
+            />
+        </ListItem>
 
+        <ListItem>
+            <TextField
+                required
+                id="description"
+                label="Project Description"
+                className={classes.textField}
+                value={this.state.description}
+                onChange={this.handleChange('description')}
+                style = {{width: 930}}
+                margin="normal"
+            />
+        </ListItem>
 
+        <ListItem>
+            <TextField
+                required
+                id="siteName"
+                label="Site Name"
+                className={classes.textField}
+                value={this.state.siteName}
+                onChange={this.handleChange('siteName')}
+                style = {{width: 457.5}}
+                margin="normal"
+            />
+
+            <TextField
+                required
+                id="siteAddress"
+                label="Site Address"
+                className={classes.textField}
+                value={this.state.siteaddress}
+                onChange={this.handleChange('siteAddress')}
+                style = {{width: 457.5}}
+                margin="normal"
+            />
+        </ListItem>
+
+        <ListItem>
+            <TextField
+                required
+                id="siteCity"
+                label="Site City"
+                className={classes.textField}
+                value={this.state.siteCity}
+                onChange={this.handleChange('siteCity')}
+                style = {{width: 300}}
+                margin="normal"
+            />
+
+            <TextField
+                required
+                id="sitestate"
+                label="Site State"
+                className={classes.textField}
+                value={this.state.siteState}
+                onChange={this.handleChange('siteState')}
+                style = {{width: 300}}
+                margin="normal"
+            />
+
+            <TextField
+                required
+                id="siteZip"
+                label="Site Zip Code"
+                className={classes.textField}
+                value={this.state.siteZip}
+                onChange={this.handleChange('siteZip')}
+                style = {{width: 300}}
+                margin="normal"
+            />
+        </ListItem>
+
+        <ListItem>
+            <TextField
+                required
+                id="signature"
+                label="Signature"
+                className={classes.textField}
+                value={this.state.signature}
+                onChange={this.handleChange('signature')}
+                style = {{width: 400}}
+                margin="normal"
+            />
+        </ListItem>
+
+        <ListItem>
+            <TextField
+                required
+                id="date"
+                label="Date"
+                className={classes.textField}
+                value={this.state.date}
+                onChange={this.handleChange('date')}
+                style = {{width: 400}}
+                margin="normal"
+            />
+        </ListItem>
+
+        <ListItem>
+            <TextField
+                required
+                id="printedName"
+                label="Printed Name and Title"
+                className={classes.textField}
+                value={this.state.printedName}
+                onChange={this.handleChange('printedName')}
+                style = {{width: 400}}
+                margin="normal"
+            />
+        </ListItem>
 
       </form>
     );
