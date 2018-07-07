@@ -7,7 +7,7 @@ class UserHome extends React.Component {
         return (
             <div>
                 <div>
-                    <UserSidebar />
+                    Dashboard
                 </div>
             </div>
         )

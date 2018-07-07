@@ -8,18 +8,9 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import UserList from "./UserList";
-import UserLogin from "./UserLogin";
-import UserHome from "./UserHome";
 import ProfileForm from "./ProfileForm";
 import ProjectForm from "./ProjectForm";
 import DisbursementRequestForm from "./DisbursementRequestForm";
-import {
-	BrowserRouter as Router,
-	Route,
-	Link,
-	Switch,
-	Redirect
-} from 'react-router-dom'
 
 
 const drawerWidth = 240;
@@ -48,7 +39,7 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
 });
 
-function UserSidebar(props) {
+function ProfileSidebar(props) {
   const { classes } = props;
 
   return (
@@ -71,22 +62,14 @@ function UserSidebar(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-			<Router>
-				<div>
-					<Route path="/login" component={UserLogin} />
-					<Route path="/home" component={UserHome} />
-					<Route path="/profile" component={ProfileForm} />
-					<Route path="/project" component={ProjectForm} />
-					<Route path="/disbursement" component={DisbursementRequestForm} />
-				</div>
-			</Router>
+        <ProfileForm />
       </main>
     </div>
   );
 }
 
-UserSidebar.propTypes = {
+ProfileSidebar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(UserSidebar);
+export default withStyles(styles)(ProfileSidebar);
