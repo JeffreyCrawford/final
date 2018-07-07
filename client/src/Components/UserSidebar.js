@@ -13,6 +13,7 @@ import UserHome from "./UserHome";
 import ProfileForm from "./ProfileForm";
 import ProjectForm from "./ProjectForm";
 import DisbursementRequestForm from "./DisbursementRequestForm";
+import HeaderText from "./HeaderText"
 import {
 	BrowserRouter as Router,
 	Route,
@@ -56,7 +57,7 @@ function UserSidebar(props) {
       <AppBar position="absolute" className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" color="inherit" noWrap>
-            Welcome to your Grant Homepage!
+            <HeaderText />
           </Typography>
         </Toolbar>
       </AppBar>
