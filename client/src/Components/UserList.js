@@ -25,25 +25,25 @@ function UserList(props) {
   return (
     <div className={classes.root}>
       <List component="nav">
-        <ListItem button>
+        <ListItem button component="a" href="/home">
             <ListItemIcon>
             <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component="a" href="/profile">
             <ListItemIcon >
             <ProfileIcon />
             </ListItemIcon>
             <ListItemText primary="Profile" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component="a" href="/project">
             <ListItemIcon>
             <ProjectIcon />
             </ListItemIcon>
             <ListItemText primary="Projects" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component="a" href="/disbursement">
             <ListItemIcon>
             <DisbursementIcon />
             </ListItemIcon>
