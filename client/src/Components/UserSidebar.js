@@ -13,7 +13,8 @@
 	import ProfileForm from "./ProfileForm";
 	import ProjectForm from "./ProjectForm";
 	import DisbursementRequestForm from "./DisbursementRequestForm";
-	import HeaderText from "./HeaderText"
+	import HeaderText from "./HeaderText";
+	import blue from '@material-ui/core/colors/blue';
 	import {
 	BrowserRouter as Router,
 	Route,
@@ -35,6 +36,7 @@
 	},
 	appBar: {
 	zIndex: theme.zIndex.drawer + 1,
+	backgroundColor: blue[600]
 	},
 	drawerPaper: {
 	position: 'relative',
