@@ -20,7 +20,7 @@ const styles = theme => ({
   },
 });
 
-function SimpleList(props) {
+function UserList(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -55,7 +55,7 @@ function SimpleList(props) {
         <ListItem button>
           <ListItemText primary="Help" />
         </ListItem>
-        <ListItem button component="a" href="#simple-list">
+        <ListItem button component="a" href="https://www.google.com">
           <ListItemText primary="Contact Us" />
         </ListItem>
       </List>
@@ -63,8 +63,8 @@ function SimpleList(props) {
   );
 }
 
-SimpleList.propTypes = {
+UserList.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleList);
+export default withStyles(styles)(UserList);
