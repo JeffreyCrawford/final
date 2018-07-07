@@ -7,7 +7,7 @@ import ProjectForm from './Components/ProjectForm';
 class App extends Component {
   render() {
     return (
-      <ProjectForm />
+      <UserHome />
     );
   }
 }

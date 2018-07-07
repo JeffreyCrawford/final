@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import UserList from "./UserList";
 import ProfileForm from "./ProfileForm";
+import ProjectForm from "./ProjectForm";
+import DisbursementRequestForm from "./DisbursementRequestForm";
 
 
 const drawerWidth = 240;
@@ -18,7 +20,6 @@ const styles = theme => ({
     flexGrow: 1,
     height: 430,
     zIndex: 1,
-    overflow: 'hidden',
     position: 'relative',
     display: 'flex',
   },
@@ -61,7 +62,7 @@ function UserSidebar(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <ProfileForm />
+        <DisbursementRequestForm />
       </main>
     </div>
   );

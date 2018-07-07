@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 
 const styles = theme => ({
@@ -60,7 +59,7 @@ class ProjectForm extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
-      
+
         <ListItem>
             <TextField
                 required
