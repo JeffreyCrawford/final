@@ -17,9 +17,9 @@ module.exports = (app, db) => {
     /* Create user */
     app.post("/api/users", function(req, res) {
         db.users.create({
-            email: "1@2.com",
+            email: req.body.email,
             // categoryID: req.body.categoryID,
-            password: "12345678",
+            password: req.body.password,
           }).then(function (data) {
             res.json(data)
           });
