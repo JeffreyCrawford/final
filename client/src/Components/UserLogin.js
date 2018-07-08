@@ -63,11 +63,16 @@ class UserLogin extends React.Component {
     this.setState(state => ({ showPassword: !state.showPassword }));
   };
 
+  handleSubmit = event => {
+	alert('Email: ' + this.state.email + " Password: " + this.state.password);
+    event.preventDefault();
+  }
+
   render() {
     const { classes } = this.props;
 
     return (
-		<div>
+		<form onSubmit={this.handleSubmit}>
 			<ListItem>
 				<FormControl
 				className={classNames(classes.margin, classes.withoutLabel, classes.textField)}
@@ -112,11 +117,13 @@ class UserLogin extends React.Component {
 				<Button variant="contained" color="primary" className={classes.buttonForgot}>
 					Forgot Password
 				</Button>
-				<Button component="a" href="/home"  variant="contained" color="primary" className={classes.buttonLogin}>
+
+				<Button type="submit" variant="contained" color="primary" className={classes.buttonLogin}>
 					Login
 				</Button>
+
 			</ListItem>
-		</div>
+		</form>
     );
   }
 }

@@ -24,7 +24,9 @@ module.exports = function(sequelize, Sequelize) {
                     msg: "Your password must be at least 8 characters"
                 }
             }
-        }
+        }, 
+        paranoid: true
+        
     });
 
     return User;

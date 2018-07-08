@@ -27,5 +27,15 @@ module.exports = (function() {
         })
     })
 
+    /* Create profile */
+    userRoutes.post("/users", function(req, res) {
+        var user = new User.create({
+            email: req.body.email,
+            password: req.body.password
+        }).then(function(user) {
+            console.log(user.get({ plain: true }))
+        })
+    })
+
     return userRoutes;
 })();
