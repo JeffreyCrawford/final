@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import yellow from '@material-ui/core/colors/yellow';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   container: {
@@ -30,6 +31,12 @@ const styles = theme => ({
 	margin: theme.spacing.unit,
 	backgroundColor: yellow[700]
   },
+  paper: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    width: 1000
+    }
 
 });
 
@@ -71,130 +78,129 @@ class ProfileForm extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
-        <ListItem>
-            <TextField
-                required
-                id="name"
-                label="Your Name"
-                className={classes.textField}
-                value={this.state.name}
-                onChange={this.handleChange('name')}
-                style = {{width: 300}}
-                margin="normal"
-            />
+		<Paper className={classes.paper} elevation={1}>
+			<form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
+			<ListItem>
+				<TextField
+					required
+					id="name"
+					label="Your Name"
+					className={classes.textField}
+					value={this.state.name}
+					onChange={this.handleChange('name')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
 
-            <TextField
-                required
-                id="email"
-                label="Email"
-                className={classes.textField}
-                value={this.state.email}
-                onChange={this.handleChange('email')}
-                style = {{width: 300}}
-                margin="normal"
-            />
+				<TextField
+					required
+					id="email"
+					label="Email"
+					className={classes.textField}
+					value={this.state.email}
+					onChange={this.handleChange('email')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
 
-            <TextField
-                required
-                id="phone"
-                label="Contact Phone"
-                className={classes.textField}
-                value={this.state.phone}
-                onChange={this.handleChange('phone')}
-                style = {{width: 300}}
-                margin="normal"
-            />
-        </ListItem>
+				<TextField
+					required
+					id="phone"
+					label="Contact Phone"
+					className={classes.textField}
+					value={this.state.phone}
+					onChange={this.handleChange('phone')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
+			</ListItem>
 
-        <Divider />
+			<Divider />
 
-        <ListItem>
+			<ListItem>
 
-            <TextField
-                required
-                id="community"
-                label="Community Name"
-                className={classes.textField}
-                value={this.state.community}
-                onChange={this.handleChange('community')}
-                style = {{width: 300}}
-                margin="normal"
-            />
+				<TextField
+					required
+					id="community"
+					label="Community Name"
+					className={classes.textField}
+					value={this.state.community}
+					onChange={this.handleChange('community')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
 
-            <TextField
-                required
-                id="county"
-                label="County Where Community is Located"
-                className={classes.textField}
-                value={this.state.county}
-                onChange={this.handleChange('county')}
-                style = {{width: 300}}
-                margin="normal"
-            />
-
-
-            <TextField
-                required
-                id="address"
-                label="Community Mailing Address"
-                className={classes.textField}
-                value={this.state.address}
-                onChange={this.handleChange('address')}
-                style = {{width: 300}}
-                margin="normal"
-            />
-
-        </ListItem>
-
-        <ListItem>
-
-            <TextField
-                required
-                id="city"
-                label="City"
-                className={classes.textField}
-                value={this.state.city}
-                onChange={this.handleChange('city')}
-                style = {{width: 300}}
-                margin="normal"
-            />
-
-            <TextField
-                required
-                id="state"
-                label="State"
-                className={classes.textField}
-                value={this.state.state}
-                onChange={this.handleChange('state')}
-                style = {{width: 300}}
-                margin="normal"
-            />
-
-            <TextField
-                required
-                id="zip"
-                label="Zip Code"
-                className={classes.textField}
-                value={this.state.zip}
-                onChange={this.handleChange('zip')}
-                style = {{width: 300}}
-                margin="normal"
-            />
-        </ListItem>
-
-		<ListItem>
-			<Button variant="contained" color="primary" className={classes.buttonCancel}>
-				Cancel
-			</Button>
-			<Button type="submit"  variant="contained" color="primary" className={classes.buttonSubmit}>
-				Submit
-			</Button>
-		</ListItem>
+				<TextField
+					required
+					id="county"
+					label="County Where Community is Located"
+					className={classes.textField}
+					value={this.state.county}
+					onChange={this.handleChange('county')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
 
 
+				<TextField
+					required
+					id="address"
+					label="Community Mailing Address"
+					className={classes.textField}
+					value={this.state.address}
+					onChange={this.handleChange('address')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
 
-      </form>
+			</ListItem>
+
+			<ListItem>
+
+				<TextField
+					required
+					id="city"
+					label="City"
+					className={classes.textField}
+					value={this.state.city}
+					onChange={this.handleChange('city')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
+
+				<TextField
+					required
+					id="state"
+					label="State"
+					className={classes.textField}
+					value={this.state.state}
+					onChange={this.handleChange('state')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
+
+				<TextField
+					required
+					id="zip"
+					label="Zip Code"
+					className={classes.textField}
+					value={this.state.zip}
+					onChange={this.handleChange('zip')}
+					style = {{width: 300}}
+					margin="normal"
+				/>
+			</ListItem>
+
+			<ListItem>
+				<Button variant="contained" color="primary" className={classes.buttonCancel}>
+					Cancel
+				</Button>
+				<Button type="submit"  variant="contained" color="primary" className={classes.buttonSubmit}>
+					Submit
+				</Button>
+			</ListItem>
+			</form>
+		</Paper>
     );
   }
 }

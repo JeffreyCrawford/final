@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import yellow from '@material-ui/core/colors/yellow';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   container: {
@@ -30,6 +31,12 @@ const styles = theme => ({
   margin: theme.spacing.unit,
   backgroundColor: yellow[700]
   },
+  paper: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    width: 1000
+    }
 
 });
 
@@ -67,88 +74,85 @@ class DisbursementRequestForm extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
-        <ListItem>
-            <TextField
-                required
-                id="name"
-                label="Project Name"
-                className={classes.textField}
-                value={this.state.name}
-                onChange={this.handleChange('name')}
-                style = {{width: 457.5}}
-                margin="normal"
-            />
-        </ListItem>
-        <ListItem>
+		<Paper className={classes.paper} elevation={1}>
+			<form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
+				<ListItem>
+					<TextField
+						required
+						id="name"
+						label="Project Name"
+						className={classes.textField}
+						value={this.state.name}
+						onChange={this.handleChange('name')}
+						style = {{width: 457.5}}
+						margin="normal"
+					/>
+				</ListItem>
+				<ListItem>
 
-            <TextField
-                required
-                id="amount"
-                label="Amount to be Disbursed"
-                className={classes.textField}
-                value={this.state.amount}
-                onChange={this.handleChange('amount')}
-                style = {{width: 457.5}}
-                margin="normal"
-            />
-        </ListItem>
-        <ListItem>
+					<TextField
+						required
+						id="amount"
+						label="Amount to be Disbursed"
+						className={classes.textField}
+						value={this.state.amount}
+						onChange={this.handleChange('amount')}
+						style = {{width: 457.5}}
+						margin="normal"
+					/>
+				</ListItem>
+				<ListItem>
 
-            <TextField
-                required
-                id="finalDisbursement"
-                label="Final Disbursement for this Project?"
-                className={classes.textField}
-                value={this.state.finalDisbursement}
-                onChange={this.handleChange('finalDisbursement')}
-                style = {{width: 457.5}}
-                margin="normal"
-            />
-        </ListItem>
-        <ListItem>
+					<TextField
+						required
+						id="finalDisbursement"
+						label="Final Disbursement for this Project?"
+						className={classes.textField}
+						value={this.state.finalDisbursement}
+						onChange={this.handleChange('finalDisbursement')}
+						style = {{width: 457.5}}
+						margin="normal"
+					/>
+				</ListItem>
+				<ListItem>
 
-            <TextField
-                required
-                id="signature"
-                label="Signature"
-                className={classes.textField}
-                value={this.state.signature}
-                onChange={this.handleChange('signature')}
-                style = {{width: 457.5}}
-                margin="normal"
-            />
-        </ListItem>
-        <ListItem>
+					<TextField
+						required
+						id="signature"
+						label="Signature"
+						className={classes.textField}
+						value={this.state.signature}
+						onChange={this.handleChange('signature')}
+						style = {{width: 457.5}}
+						margin="normal"
+					/>
+				</ListItem>
+				<ListItem>
 
-            <TextField
-                required
-                id="date"
-                label="Date"
-                className={classes.textField}
-                value={this.state.date}
-                onChange={this.handleChange('date')}
-                style = {{width: 457.5}}
-                margin="normal"
-            />
+					<TextField
+						required
+						id="date"
+						label="Date"
+						className={classes.textField}
+						value={this.state.date}
+						onChange={this.handleChange('date')}
+						style = {{width: 457.5}}
+						margin="normal"
+					/>
 
-        </ListItem>
+				</ListItem>
 
-        <ListItem>
-          <Button variant="contained" color="primary" className={classes.buttonCancel}>
-            Cancel
-          </Button>
-          <Button type="submit"  variant="contained" color="primary" className={classes.buttonSubmit}>
-            Submit
-          </Button>
-        </ListItem>
- 
-
-
-
-
-
-      </form>
+				<ListItem>
+				<Button variant="contained" color="primary" className={classes.buttonCancel}>
+					Cancel
+				</Button>
+				<Button type="submit"  variant="contained" color="primary" className={classes.buttonSubmit}>
+					Submit
+				</Button>
+				</ListItem>
+	
+			</form>
+		</Paper>
     );
   }
 }
