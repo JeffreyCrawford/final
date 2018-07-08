@@ -1,33 +1,29 @@
-var communities = require("./communities")
-var counties = require("./counties")
-
 module.exports = function(sequelize, Sequelize) {
-    const Profile = Sequelize.define("profile", {
+    const Profile = sequelize.define("profile", {
         name: {
             type: Sequelize.STRING,
             allowNull: false
         },
+        email: {
+            type: Sequelize.STRING,
+            unique: true,
+            allowNull: false,
+            validate: {
+                isEmail: true,
+            }
+        },
         phone: {
             type: Sequelize.STRING,
             allowNull: false,
-            validate: {
-                isMobilePhone: true
-            }
         },
         county: {
             type: Sequelize.STRING,
             allowNull: false,
-            validate: {
-                isIn: counties
-            }
         },
         community: {
             type: Sequelize.STRING,
             allowNull: false,
             unique: true,
-            validate: {
-                isIn: communities
-            }
         },
         address: {
             type: Sequelize.STRING,
@@ -45,34 +41,6 @@ module.exports = function(sequelize, Sequelize) {
         zip: {
             type: Sequelize.INTEGER,
             allowNull: false,
-            validate: {
-                isPostalCode: true
-            }
-        },
-        funds_requested: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
-        funds_escrowed: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            validate: {
-                isCurrency: true
-            }
-        },
-        funds_pending: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            validate: {
-                isCurrency: true
-            }
-        },
-        funds_disbursed: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            validate: {
-                isCurrency: true
-            }
         }
     });
     return Profile;

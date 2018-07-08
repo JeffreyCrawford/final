@@ -67,8 +67,14 @@ class ProjectForm extends React.Component {
   };
 
   handleSubmit = event => {
-	console.log(this.state);
-    event.preventDefault();
+	event.preventDefault();
+	  fetch("/api/projects", {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(this.state)
+    })
   }
 
   render() {

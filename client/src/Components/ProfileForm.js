@@ -57,8 +57,14 @@ class ProfileForm extends React.Component {
   };
 
   handleSubmit = event => {
-	console.log(this.state);
     event.preventDefault();
+	  fetch("/api/profiles", {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(this.state)
+  })
   }
 
   render() {

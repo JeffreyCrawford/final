@@ -31,6 +31,9 @@ db.sequelize = sequelize;
 
 //Models/tables
 db.users = require('../models/users.js')(sequelize, Sequelize);
+db.profiles = require('../models/profiles.js')(sequelize, Sequelize);
+db.projects = require('../models/projects.js')(sequelize, Sequelize);
+db.disbursementrequests = require('../models/disbursementrequests.js')(sequelize, Sequelize);
 
 
 //Relations

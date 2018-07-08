@@ -53,8 +53,14 @@ class DisbursementRequestForm extends React.Component {
   };
 
   handleSubmit = event => {
-    console.log(this.state);
-      event.preventDefault();
+    event.preventDefault();
+	  fetch("/api/disbursementrequests", {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(this.state)
+  })
   }
 
   render() {

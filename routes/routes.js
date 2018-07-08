@@ -13,10 +13,6 @@ module.exports = (app, db) => {
           });
     });
 
-    app.get("/api/counties", function(req, res) {
-        res.json(counties);
-    });
-
     /* Create user */
     app.post("/api/users", function(req, res) {
         db.users.create({
@@ -25,4 +21,67 @@ module.exports = (app, db) => {
             password: req.body.password,
         });
     })
+
+    /* Get profiles */
+    app.get("/api/profiles", function(req, res) {
+        db.profiles.findAll({
+          }).then(function (data) {
+            res.send(data)
+          });
+    });
+
+    /* Create Profile */
+    app.post("/api/profiles", function(req, res) {
+        db.profiles.create({
+            name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone,
+            county: req.body.county,
+            community: req.body.community,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            zip: req.body.zip,
+        });
+    })
+
+    /* Get disbursement requests */
+    app.get("/api/disbursementrequests", function(req, res) {
+        db.disbursementrequests.findAll({
+          }).then(function (data) {
+            res.send(data)
+          });
+    });
+
+    /* Create disbursement requests */
+    app.post("/api/disbursementrequests", function(req, res) {
+        db.disbursementrequests.create({
+            name: req.body.name,
+            funds_requested: req.body.amount,
+            final_disbursement: req.body.finalDisbursement,
+            signature: req.body.signature,
+            date: req.body.date,
+            status: req.body.status
+        });
+    })
+
+    /* Get projects */
+    app.get("/api/projects", function(req, res) {
+        db.projects.findAll({
+            }).then(function (data) {
+            res.send(data)
+            });
+    });
+
+    /* Create projects */
+    app.post("/api/projects", function(req, res) {
+        db.projects.create({
+        });
+    })
+
+    app.get("/api/counties", function(req, res) {
+        res.json(counties);
+    });
+
+
 };

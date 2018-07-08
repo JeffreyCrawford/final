@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-    const Project = Sequelize.define("project", {
+    const Project = sequelize.define("project", {
         project_name: {
             type: Sequelize.STRING,
             allowNull: false,

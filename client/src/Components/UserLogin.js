@@ -64,19 +64,13 @@ class UserLogin extends React.Component {
   };
 
   handleSubmit = event => {
-	console.log(this.state);
 	event.preventDefault();
-	var data = {
-		email: this.state.email,
-		password: this.state.password
-		}
-		console.log(data)
 	  fetch("/api/users", {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
 		},
-		body: JSON.stringify(data)
+		body: JSON.stringify(this.state)
   })
 }
 

@@ -1,12 +1,13 @@
 module.exports = function(sequelize, Sequelize) {
 
-    const DisbursementRequest = Sequelize.define("disbursementrequest", {
+    const DisbursementRequest = sequelize.define("disbursementrequest", {
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
         funds_requested: {
             type: Sequelize.INTEGER,
             allowNull: false,
-            validate: {
-                isCurrency: true
-            }
         },
         final_disbursement: {
             type: Sequelize.BOOLEAN,
@@ -15,10 +16,6 @@ module.exports = function(sequelize, Sequelize) {
         date: {
             type: Sequelize.DATEONLY,
             allowNull: false,
-            defaultValue: Date.now(),
-            validate: {
-                isDate: true
-            }
         },
         invoice_1: {
             type: Sequelize.BLOB
@@ -36,9 +33,7 @@ module.exports = function(sequelize, Sequelize) {
         status: {
             type: Sequelize.STRING,
             allowNull: false,
-            validate: {
-                isIn: ["Approved", "Denied", "Pending", "Disbursed"]
-            }
+            defaultValue: "Pending"
         },
    });
 
