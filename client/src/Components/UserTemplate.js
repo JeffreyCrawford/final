@@ -55,25 +55,25 @@
 	return (
 	<div className={classes.root}>
 		<AppBar position="absolute" className={classes.appBar}>
-		<Toolbar>
-			<Typography variant="title" color="inherit" noWrap>
-			<HeaderText />
-			</Typography>
-		</Toolbar>
+			<Toolbar>
+				<Typography variant="title" color="inherit" noWrap>
+					<HeaderText />
+				</Typography>
+			</Toolbar>
 		</AppBar>
 		<Drawer
-		variant="permanent"
-		classes={{
-			paper: classes.drawerPaper,
-		}}
+			variant="permanent"
+			classes={{
+				paper: classes.drawerPaper,
+			}}
 		>
-		<div className={classes.toolbar} />
-		<UserList />
+			<div className={classes.toolbar} />
+			<UserList />
 		</Drawer>
-		<main className={classes.content}>
-		<div className={classes.toolbar} />
-			<MainBody />
-		</main>
+			<main className={classes.content}>
+			<div className={classes.toolbar} />
+				<MainBody />
+			</main>
 	</div>
 	);
 	}

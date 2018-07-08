@@ -13,6 +13,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import ListItem from '@material-ui/core/ListItem';
+import Button from '@material-ui/core/Button';
+import blue from '@material-ui/core/colors/blue';
 
 const styles = theme => ({
   root: {
@@ -27,6 +29,17 @@ const styles = theme => ({
   },
   textField: {
     flexBasis: 200,
+  },
+  buttonLogin: {
+	margin: theme.spacing.unit,
+	backgroundColor: blue[600]
+  },
+  buttonForgot: {
+	margin: theme.spacing.unit,
+	backgroundColor: blue[600]
+  },
+  input: {
+    display: 'none',
   },
 });
 
@@ -94,6 +107,14 @@ class UserLogin extends React.Component {
 					margin="normal"
 				/>
 				</FormControl>
+			</ListItem>
+			<ListItem>
+				<Button variant="contained" color="primary" className={classes.buttonForgot}>
+					Forgot Password
+				</Button>
+				<Button component="a" href="/home"  variant="contained" color="primary" className={classes.buttonLogin}>
+					Login
+				</Button>
 			</ListItem>
 		</div>
     );

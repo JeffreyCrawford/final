@@ -52,8 +52,8 @@ function UserList(props) {
       </List>
       <Divider />
       <List component="nav">
-        <ListItem button>
-          <ListItemText primary="Help" />
+        <ListItem button component="a" href="/login">
+          <ListItemText primary="Log Out" />
         </ListItem>
         <ListItem button component="a" href="https://www.google.com">
           <ListItemText primary="Contact Us" />

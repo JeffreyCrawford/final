@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UserTemplate from "./UserTemplate";
 import ProjectForm from "./ProjectForm";
 
-class UserHome extends React.Component {
+class Dashboard extends React.Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ class UserHome extends React.Component {
     }
 }
 
-export default UserHome;
+export default Dashboard;
