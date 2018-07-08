@@ -7,7 +7,10 @@ module.exports = (app, db) => {
 
     /* Get users */
     app.get("/api/users", function(req, res) {
-        res.json(users);
+        db.users.findAll({
+          }).then(function (data) {
+            res.send(data)
+          });
     });
 
     app.get("/api/counties", function(req, res) {
@@ -20,8 +23,6 @@ module.exports = (app, db) => {
             email: req.body.email,
             // categoryID: req.body.categoryID,
             password: req.body.password,
-          }).then(function (data) {
-            res.json(data)
-          });
+        });
     })
 };
