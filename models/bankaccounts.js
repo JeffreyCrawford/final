@@ -1,12 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
     const BankAccount = Sequelize.define("bankaccount", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            unique: true,
-            allowNull: false,
-            autoIncrement: true
-        },
         bank_name: {
             type: Sequelize.STRING,
             allowNull: false,

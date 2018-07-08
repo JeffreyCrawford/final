@@ -1,12 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
     const Site = Sequelize.define("site", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            unique: true,
-            allowNull: false,
-            autoIncrement: true
-        },
         name: {
             type: Sequelize.STRING,
             allowNull: false

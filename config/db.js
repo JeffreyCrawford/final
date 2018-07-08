@@ -22,4 +22,19 @@ sequelize
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
-  });
+});
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+//Models/tables
+db.users = require('../models/users.js')(sequelize, Sequelize);
+
+
+//Relations
+/* db.pets.belongsTo(db.owners);
+db.owners.hasMany(db.pets); */
+
+module.exports = db;

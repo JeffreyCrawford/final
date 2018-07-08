@@ -1,12 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
     const Project = Sequelize.define("project", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            unique: true,
-            allowNull: false,
-            autoIncrement: true
-        },
         project_name: {
             type: Sequelize.STRING,
             allowNull: false,

@@ -3,13 +3,6 @@ var counties = require("./counties")
 
 module.exports = function(sequelize, Sequelize) {
     const Profile = Sequelize.define("profile", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            unique: true,
-            allowNull: false,
-            autoIncrement: true
-        },
         name: {
             type: Sequelize.STRING,
             allowNull: false

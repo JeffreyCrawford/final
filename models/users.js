@@ -1,12 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
     const User = sequelize.define("user", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            unique: true,
-            allowNull: false,
-            autoIncrement: true
-        },
+
         email: {
             type: Sequelize.STRING,
             unique: true,
@@ -25,7 +19,6 @@ module.exports = function(sequelize, Sequelize) {
                 }
             }
         }, 
-        paranoid: true
         
     });
 

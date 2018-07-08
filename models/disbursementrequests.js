@@ -1,13 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
 
     const DisbursementRequest = Sequelize.define("disbursementrequest", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            unique: true,
-            allowNull: false,
-            autoIncrement: true
-        },
         funds_requested: {
             type: Sequelize.INTEGER,
             allowNull: false,

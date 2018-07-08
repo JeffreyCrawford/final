@@ -1,23 +1,28 @@
-/* Express setup */
-var express = require("express");
-var app = express();
-var PORT = 3001;
+'use strict';
 
+const express = require('express'),
+  bodyParser = require('body-parser'),
+  morgan = require('morgan'),
+  db = require('./config/db.js'),
+  env = require('./config/env'),
+  router = require('./routes/index');
 
-/* API routes */
-var apiRoutes = require("./routes/apiRoutes");
-app.use("/api", apiRoutes);
+const app = express();
+const PORT = 3001;
 
-/* User routes */
-var userRoutes = require("./routes/userRoutes");
-app.use("/user", userRoutes);
+app.use(morgan('combined'));
+app.use(bodyParser.json());
 
-/* Admin routes */
-var adminRoutes = require("./routes/adminRoutes");
-app.use("/admin", adminRoutes);
+app.use((req, res, next) => {
+  res.header('Content-Type', 'application/json');
+  next();
+});
 
+router(app, db);
 
-/* Server start */
-app.listen(PORT, () => {
-    console.log("Server listening on port " + PORT);
+//drop and resync with { force: true }
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log('Express listening on port:', PORT);
+  });
 });
