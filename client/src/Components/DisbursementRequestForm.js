@@ -52,11 +52,16 @@ class DisbursementRequestForm extends React.Component {
     });
   };
 
+  handleSubmit = event => {
+    console.log(this.state);
+      event.preventDefault();
+  }
+
   render() {
     const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
         <ListItem>
             <TextField
                 required
@@ -127,7 +132,7 @@ class DisbursementRequestForm extends React.Component {
           <Button variant="contained" color="primary" className={classes.buttonCancel}>
             Cancel
           </Button>
-          <Button component="a" href="/home"  variant="contained" color="primary" className={classes.buttonSubmit}>
+          <Button type="submit"  variant="contained" color="primary" className={classes.buttonSubmit}>
             Submit
           </Button>
         </ListItem>

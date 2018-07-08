@@ -64,7 +64,7 @@ class UserLogin extends React.Component {
   };
 
   handleSubmit = event => {
-	alert('Email: ' + this.state.email + " Password: " + this.state.password);
+	console.log(this.state);
     event.preventDefault();
   }
 
@@ -113,6 +113,7 @@ class UserLogin extends React.Component {
 				/>
 				</FormControl>
 			</ListItem>
+
 			<ListItem>
 				<Button variant="contained" color="primary" className={classes.buttonForgot}>
 					Forgot Password
