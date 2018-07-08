@@ -65,8 +65,22 @@ class UserLogin extends React.Component {
 
   handleSubmit = event => {
 	console.log(this.state);
-    event.preventDefault();
-  }
+	event.preventDefault();
+	var data = {
+		email: this.state.email,
+		password: this.state.password
+		}
+		console.log(data)
+	  fetch("/api/users", {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+  })
+}
+
+  
 
   render() {
     const { classes } = this.props;
@@ -84,7 +98,7 @@ class UserLogin extends React.Component {
 					value={this.state.email}
 					onChange={this.handleChange('email')}
 					style = {{width: 300}}
-					margin="normal"
+					
 				/>
 				</FormControl>
 			</ListItem>
@@ -109,7 +123,7 @@ class UserLogin extends React.Component {
 					</InputAdornment>
 					}
 					style = {{width: 300}}
-					margin="normal"
+					
 				/>
 				</FormControl>
 			</ListItem>

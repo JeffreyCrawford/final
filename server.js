@@ -10,6 +10,8 @@ const express = require('express'),
 const app = express();
 const PORT = 3001;
 
+var users = require("./models/users")
+
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
@@ -19,6 +21,16 @@ app.use((req, res, next) => {
 });
 
 router(app, db);
+
+
+
+app.get('/api/hello', (req, res) => {
+  res.send({ express: 'Hello From Express' });
+});
+
+app.get('/api/users', (req, res) => {
+  res.json(users);
+});
 
 //drop and resync with { force: true }
 db.sequelize.sync().then(() => {
