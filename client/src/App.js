@@ -20,6 +20,7 @@ class App extends Component {
 			<Router>
 				<div>
 					<Route path="/login" exact={true} component={UserLogin} />
+					<Route path="/" exact={true} component={UserTemplate} />
 					<Route path="/home" exact={true} component={UserTemplate} />
 					<Route path="/profile" exact={true} component={UserTemplate} />
 					<Route path="/project" exact={true} component={UserTemplate} />

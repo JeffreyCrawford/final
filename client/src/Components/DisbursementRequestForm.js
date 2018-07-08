@@ -4,6 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
+import Button from '@material-ui/core/Button';
+import blue from '@material-ui/core/colors/blue';
+import red from '@material-ui/core/colors/red';
+import yellow from '@material-ui/core/colors/yellow';
 
 const styles = theme => ({
   container: {
@@ -17,6 +21,14 @@ const styles = theme => ({
   },
   menu: {
     width: 200,
+  },
+  buttonSubmit: {
+    margin: theme.spacing.unit,
+    backgroundColor: blue[600]
+    },
+  buttonCancel: {
+  margin: theme.spacing.unit,
+  backgroundColor: yellow[700]
   },
 
 });
@@ -109,6 +121,15 @@ class DisbursementRequestForm extends React.Component {
                 margin="normal"
             />
 
+        </ListItem>
+
+        <ListItem>
+          <Button variant="contained" color="primary" className={classes.buttonCancel}>
+            Cancel
+          </Button>
+          <Button component="a" href="/home"  variant="contained" color="primary" className={classes.buttonSubmit}>
+            Submit
+          </Button>
         </ListItem>
  
 
