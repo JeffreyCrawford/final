@@ -9,11 +9,9 @@
 	import Divider from '@material-ui/core/Divider';
 	import UserList from "./UserList";
 	import UserLogin from "./UserLogin";
-	import UserHome from "./UserHome";
-	import ProfileForm from "./ProfileForm";
-	import ProjectForm from "./ProjectForm";
-	import DisbursementRequestForm from "./DisbursementRequestForm";
+
 	import HeaderText from "./HeaderText";
+	import MainBody from "./MainBody";
 	import blue from '@material-ui/core/colors/blue';
 	import {
 	BrowserRouter as Router,
@@ -51,7 +49,7 @@
 	toolbar: theme.mixins.toolbar,
 	});
 
-	function UserSidebar(props) {
+	function UserTemplate(props) {
 	const { classes } = props;
 
 	return (
@@ -74,22 +72,14 @@
 		</Drawer>
 		<main className={classes.content}>
 		<div className={classes.toolbar} />
-			<Router>
-				<div>
-					<Route path="/" exact={true} component={UserHome} />
-					<Route path="/home" exact={true} component={UserHome} />
-					<Route path="/profile" exact={true} component={ProfileForm} />
-					<Route path="/project" exact={true} component={ProjectForm} />
-					<Route path="/disbursement" exact={true} component={DisbursementRequestForm} />
-				</div>
-			</Router>
+			<MainBody />
 		</main>
 	</div>
 	);
 	}
 
-	UserSidebar.propTypes = {
+	UserTemplate.propTypes = {
 	classes: PropTypes.object.isRequired,
 	};
 
-	export default withStyles(styles)(UserSidebar);
+	export default withStyles(styles)(UserTemplate);

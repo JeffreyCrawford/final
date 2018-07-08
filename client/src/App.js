@@ -12,12 +12,12 @@ import {
 	Switch,
 	Redirect
 } from 'react-router-dom'
-import UserSidebar from './Components/UserSidebar';
+import UserTemplate from './Components/UserTemplate';
 
 class App extends Component {
 	render() {
 		return (
-			<UserSidebar />
+			<UserTemplate />
 		);
 	}
 }
