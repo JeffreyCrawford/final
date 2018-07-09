@@ -6,6 +6,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ListItem from '@material-ui/core/ListItem';
 
 const styles = theme => ({
   root: {
@@ -77,13 +78,23 @@ getInitialState = () => {
                 <div className={classes.root}>
                     <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography className={classes.heading}>({profile.name})</Typography>
-                        <Typography className={classes.secondaryHeading}>I am an expansion panel</Typography>
+                        <Typography className={classes.heading}>{profile.name}</Typography>
+                        <Typography className={classes.secondaryHeading}>{profile.community}</Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                         <Typography>
-                            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-                            maximus est, id dignissim quam.
+                            <ListItem>
+                                {profile.address}
+                            </ListItem>
+                            <ListItem>
+                                {profile.city}
+                            </ListItem>
+                            <ListItem>
+                                {profile.state}
+                            </ListItem>
+                            <ListItem>
+                                {profile.zip}
+                            </ListItem>
                         </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
