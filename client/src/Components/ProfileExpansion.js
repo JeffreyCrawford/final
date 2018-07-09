@@ -8,6 +8,15 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ListItem from '@material-ui/core/ListItem';
 
+import TextField from '@material-ui/core/TextField';
+import Divider from '@material-ui/core/Divider';
+
+import Button from '@material-ui/core/Button';
+import blue from '@material-ui/core/colors/blue';
+import red from '@material-ui/core/colors/red';
+import yellow from '@material-ui/core/colors/yellow';
+import Paper from '@material-ui/core/Paper';
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -21,6 +30,32 @@ const styles = theme => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    margin: theme.spacing.unit,
+  },
+  menu: {
+    width: 200,
+  },
+  buttonSubmit: {
+	margin: theme.spacing.unit,
+	backgroundColor: blue[600]
+  },
+  buttonCancel: {
+	margin: theme.spacing.unit,
+	backgroundColor: yellow[700]
+  },
+  paper: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    width: 1000
+    }
 });
 
 
@@ -29,6 +64,13 @@ class ProfileExpansion extends React.Component {
   state = {
     expanded: null,
     profiles: []
+  };
+
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
   };
 
 
@@ -71,24 +113,134 @@ getInitialState = () => {
                 {this.state.profiles.map((profile, i) => {
                     return( 
                     <ExpansionPanel  >
+                        <Divider />
+                            
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography className={classes.heading}>{profile.id} {profile.name}</Typography>
                         <Typography className={classes.secondaryHeading}>{profile.community}</Typography>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails>
                         <Typography>
-                            <ListItem>
-                                {profile.address}
+                        <ListItem>
+                                <TextField
+                                    disabled
+                                    id="name"
+                                    label="Your Name"
+                                    className={classes.textField}
+                                    value={profile.name}
+                                    onChange={this.handleChange('name')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
+                                <TextField
+                                    disabled
+                                    id="email"
+                                    label="Email"
+                                    className={classes.textField}
+                                    value={profile.email}
+                                    onChange={this.handleChange('email')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
+                                <TextField
+                                    disabled
+                                    id="phone"
+                                    label="Contact Phone"
+                                    className={classes.textField}
+                                    value={profile.phone}
+                                    onChange={this.handleChange('phone')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
                             </ListItem>
+
                             <ListItem>
-                                {profile.city}
+
+                                <TextField
+                                    disabled
+                                    id="community"
+                                    label="Community Name"
+                                    className={classes.textField}
+                                    value={profile.community}
+                                    onChange={this.handleChange('community')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
+                                <TextField
+                                    disabled
+                                    id="county"
+                                    label="County Where Community is Located"
+                                    className={classes.textField}
+                                    value={profile.county}
+                                    onChange={this.handleChange('county')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
+
+                                <TextField
+                                    disabled
+                                    id="address"
+                                    label="Community Mailing Address"
+                                    className={classes.textField}
+                                    value={profile.address}
+                                    onChange={this.handleChange('address')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
                             </ListItem>
+
                             <ListItem>
-                                {profile.state}
+
+                                <TextField
+                                    disabled
+                                    id="city"
+                                    label="City"
+                                    className={classes.textField}
+                                    value={profile.city}
+                                    onChange={this.handleChange('city')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
+                                <TextField
+                                    disabled
+                                    id="state"
+                                    label="State"
+                                    className={classes.textField}
+                                    value={profile.state}
+                                    onChange={this.handleChange('state')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
+
+                                <TextField
+                                    disabled
+                                    id="zip"
+                                    label="Zip Code"
+                                    className={classes.textField}
+                                    value={profile.zip}
+                                    onChange={this.handleChange('zip')}
+                                    style = {{width: 300}}
+                                    margin="normal"
+                                />
                             </ListItem>
+
                             <ListItem>
-                                {profile.zip}
+                                <Button variant="contained" color="primary" className={classes.buttonCancel}>
+                                    Cancel
+                                </Button>
+                                <Button type="submit"  variant="contained" color="primary" className={classes.buttonSubmit}>
+                                    Submit
+                                </Button>
                             </ListItem>
+                            <Divider />
+                            
+                            <Divider />
                         </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>

@@ -10,7 +10,33 @@ const express = require('express'),
 const app = express();
 const PORT = 3001;
 
+const nodemailer = require("nodemailer")
+
+let poolConfig = {
+  pool: true,
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // use TLS
+  auth: {
+      user: 'GrantProgramFinalProject',
+      pass: 'hell0!hell0!'
+  }
+};
+
+/* nodemailer */
+let transporter = nodemailer.createTransport(poolConfig)
+
+// verify connection configuration
+transporter.verify(function(error, success) {
+  if (error) {
+       console.log(error);
+  } else {
+       console.log('Server is ready to take our messages');
+  }
+});
+
 var users = require("./models/users")
+
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -32,7 +58,20 @@ app.get('/api/users', (req, res) => {
   res.json(users);
 });
 
-//drop and resync with { force: true }
+
+var message = {
+  from: 'GrantProgramFinalProject@gmail.com',
+  to: 'jeffrey.a.crawford@gmail.com',
+  subject: 'yo',
+  text: 'wat up',
+};
+
+transporter.sendMail(message)
+
+
+
+
+
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log('Express listening on port:', PORT);
