@@ -127,7 +127,7 @@ class UserLogin extends React.Component {
 					Forgot Password
 				</Button>
 
-				<Button type="submit" component="a" href="/home" variant="contained" color="primary" className={classes.buttonLogin}>
+				<Button type="submit" variant="contained" color="primary" className={classes.buttonLogin}>
 					Login
 				</Button>
 
