@@ -35,8 +35,6 @@ transporter.verify(function(error, success) {
   }
 });
 
-var users = require("./models/users")
-
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -50,20 +48,14 @@ router(app, db);
 
 
 
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-});
-
-app.get('/api/users', (req, res) => {
-  res.json(users);
-});
 
 
 var message = {
-  from: 'GrantProgramFinalProject@gmail.com',
+  sender: "Grant Management System",
+  from: "GrantProgramFinalProject@gmail.com",
   to: 'jeffrey.a.crawford@gmail.com',
-  subject: 'yo',
-  text: 'wat up',
+  subject: 'testing',
+  text: '123',
 };
 
 transporter.sendMail(message)

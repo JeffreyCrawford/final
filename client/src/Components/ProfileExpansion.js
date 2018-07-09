@@ -241,8 +241,11 @@ getInitialState = () => {
                             <Divider />
                             
                             <Divider />
+
                         </Typography>
+
                         </ExpansionPanelDetails>
+
                     </ExpansionPanel>
                     )}
                 )} 
