@@ -7,6 +7,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ListItem from '@material-ui/core/ListItem';
+import ProfileExpansion from "./ProfileExpansion"
 
 const styles = theme => ({
   root: {
@@ -39,31 +40,6 @@ class Dashboard extends React.Component {
     });
   };
 
-getInitialState = () => {
-    return {
-      profiles: []
-    }
-};
-
-  componentDidMount = () => {
-    var _this = this;
-    fetch("/api/profiles", {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-      
-    })
-    .then(function(res) {
-        return res.json()
-    })
-    .then(function(res) {
-        console.log(res[0])
-        _this.setState({
-            profiles: res
-        }) 
-    })
-  }
 
   
 
@@ -74,32 +50,8 @@ getInitialState = () => {
 
     return (
         <div>
-            {this.state.profiles.map(profile => 
-                <div className={classes.root}>
-                    <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography className={classes.heading}>{profile.name}</Typography>
-                        <Typography className={classes.secondaryHeading}>{profile.community}</Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                        <Typography>
-                            <ListItem>
-                                {profile.address}
-                            </ListItem>
-                            <ListItem>
-                                {profile.city}
-                            </ListItem>
-                            <ListItem>
-                                {profile.state}
-                            </ListItem>
-                            <ListItem>
-                                {profile.zip}
-                            </ListItem>
-                        </Typography>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </div>
-            )} 
+            <ProfileExpansion />
+            
         </div>
 
     );
