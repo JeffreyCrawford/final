@@ -38,6 +38,9 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     margin: theme.spacing.unit,
+    width: 300
+
+
   },
   menu: {
     width: 200,
@@ -110,7 +113,7 @@ getInitialState = () => {
     return (
         <div>
             <div className={classes.root}>
-                {this.state.profiles.map((profile, i) => {
+                {this.state.profiles.map(profile => {
                     return( 
                     <ExpansionPanel  >
                         <Divider />
@@ -129,7 +132,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.name}
                                     onChange={this.handleChange('name')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -140,7 +143,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.email}
                                     onChange={this.handleChange('email')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -151,7 +154,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.phone}
                                     onChange={this.handleChange('phone')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
                             </ListItem>
@@ -165,7 +168,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.community}
                                     onChange={this.handleChange('community')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -176,7 +179,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.county}
                                     onChange={this.handleChange('county')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -188,7 +191,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.address}
                                     onChange={this.handleChange('address')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -203,7 +206,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.city}
                                     onChange={this.handleChange('city')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -214,7 +217,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.state}
                                     onChange={this.handleChange('state')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
 
@@ -225,7 +228,7 @@ getInitialState = () => {
                                     className={classes.textField}
                                     value={profile.zip}
                                     onChange={this.handleChange('zip')}
-                                    style = {{width: 300}}
+                                    
                                     margin="normal"
                                 />
                             </ListItem>

@@ -10,7 +10,7 @@ module.exports = function(sequelize, Sequelize) {
             allowNull: false,
         },
         final_disbursement: {
-            type: Sequelize.BOOLEAN,
+            type: Sequelize.STRING,
             allowNull: false
         },
         date: {

@@ -11,6 +11,7 @@ import {
 	Switch,
 	Redirect
 } from 'react-router-dom'
+import DisbursementLanding from './DisbursementLanding';
 
 
 const MainBody = () => {
@@ -21,7 +22,7 @@ const MainBody = () => {
                 <Route path="/home" exact={true} component={Dashboard} />
                 <Route path="/profile" exact={true} component={ProfileForm} />
                 <Route path="/project" exact={true} component={ProjectForm} />
-                <Route path="/disbursement" exact={true} component={NewDisbursement} />
+                <Route path="/disbursement" exact={true} component={DisbursementLanding} />
             </div>
         </Router>
     );

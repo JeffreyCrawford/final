@@ -20,7 +20,7 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: '70%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -56,9 +56,6 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     width: 1000
-    },
-    ExpansionPanel: {
-        width: 700
     }
 });
 
@@ -101,7 +98,7 @@ class NewDisbursement extends React.Component {
 
 
             <div className={classes.root}>
-            <ExpansionPanel className={classes.ExpansionPanel}>
+            <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<AddIcon />}>
                 <Typography className={classes.heading}>New Disbursement Request</Typography>
               </ExpansionPanelSummary>
