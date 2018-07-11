@@ -17,11 +17,11 @@ import red from '@material-ui/core/colors/red';
 import yellow from '@material-ui/core/colors/yellow';
 import AddIcon from '@material-ui/icons/Add';
 import Paper from '@material-ui/core/Paper';
-import DisbursementRequestForm from './DisbursementRequestForm';
+import ProjectForm from "./ProjectForm"
 
 const styles = theme => ({
   root: {
-    width: '70%',
+    width: '100%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -62,7 +62,7 @@ const styles = theme => ({
 
 
 
-class NewDisbursement extends React.Component {
+class NewProject extends React.Component {
     state = {
         name: "",
         amount: "",
@@ -81,7 +81,7 @@ class NewDisbursement extends React.Component {
     
       handleSubmit = event => {
         event.preventDefault();
-          fetch("/api/disbursementrequests", {
+          fetch("/api/projects", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -101,11 +101,11 @@ class NewDisbursement extends React.Component {
             <div className={classes.root}>
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<AddIcon />}>
-                <Typography className={classes.heading}>New Disbursement Request</Typography>
+                <Typography className={classes.heading}>New Project</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>
-                   <DisbursementRequestForm />
+                    <ProjectForm />
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
@@ -123,8 +123,8 @@ class NewDisbursement extends React.Component {
     }
 }
 
-NewDisbursement.propTypes = {
+NewProject.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NewDisbursement);
+export default withStyles(styles)(NewProject);

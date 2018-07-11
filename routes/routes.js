@@ -76,6 +76,16 @@ module.exports = (app, db) => {
     /* Create projects */
     app.post("/api/projects", function(req, res) {
         db.projects.create({
+            project_name: req.body.projectName,
+            authorize_utility: req.body.authorizeUtility,
+            funds_requested: req.body.fundsRequested,
+            additional_funds: req.body.additionalFunds,
+            total_cost: req.body.totalCost,
+            start_date: req.body.startDate,
+            end_date: req.body.endDate,
+            description: req.body.description,
+            signature: req.body.signature,
+            status: req.body.status
         });
     })
 

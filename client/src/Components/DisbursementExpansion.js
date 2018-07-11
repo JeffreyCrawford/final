@@ -139,10 +139,10 @@ getInitialState = () => {
 
                                     <TextField
                                         disabled
-                                        id="amount"
+                                        id="funds_requested"
                                         label="Amount to be Disbursed"
                                         className={classes.textField}
-                                        value={disbursementrequest.amount}
+                                        value={disbursementrequest.funds_requested}
                                         onChange={this.handleChange('amount')}
                                         style = {{width: 457.5}}
                                         margin="normal"
@@ -155,7 +155,7 @@ getInitialState = () => {
                                         id="finalDisbursement"
                                         label="Final Disbursement for this Project?"
                                         className={classes.textField}
-                                        value={disbursementrequest.finalDisbursement}
+                                        value={disbursementrequest.final_disbursement}
                                         onChange={this.handleChange('finalDisbursement')}
                                         style = {{width: 457.5}}
                                         margin="normal"

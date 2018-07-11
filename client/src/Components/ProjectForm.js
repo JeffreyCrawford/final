@@ -87,12 +87,11 @@ class ProjectForm extends React.Component {
     const { classes } = this.props;
 
     return (
-        <Paper className={classes.paper} elevation={1}>
             <form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="county"
                         label="County"
                         className={classes.textField}
@@ -103,7 +102,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="community"
                         label="Community"
                         className={classes.textField}
@@ -114,7 +113,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="escrow"
                         label="Escrow"
                         className={classes.textField}
@@ -127,7 +126,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="projectName"
                         label="Project Name"
                         className={classes.textField}
@@ -138,7 +137,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="category"
                         label="Project Category"
                         className={classes.textField}
@@ -149,7 +148,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="authorize"
                         label="Check to Authorize Account Access"
                         className={classes.textField}
@@ -162,7 +161,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="fundsRequested"
                         label="Grant Funds Requested"
                         className={classes.textField}
@@ -173,7 +172,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="additionalFunds"
                         label="Additional Funds Approved"
                         className={classes.textField}
@@ -184,7 +183,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="totalCost"
                         label="Total Project Cost"
                         className={classes.textField}
@@ -197,7 +196,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="startDate"
                         label="Estimated Start Date"
                         className={classes.textField}
@@ -208,7 +207,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="endDate"
                         label="Estimated End Date"
                         className={classes.textField}
@@ -221,7 +220,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="description"
                         label="Project Description"
                         className={classes.textField}
@@ -234,7 +233,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="siteName"
                         label="Site Name"
                         className={classes.textField}
@@ -245,7 +244,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="siteAddress"
                         label="Site Address"
                         className={classes.textField}
@@ -258,7 +257,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="siteCity"
                         label="Site City"
                         className={classes.textField}
@@ -269,7 +268,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="sitestate"
                         label="Site State"
                         className={classes.textField}
@@ -280,7 +279,7 @@ class ProjectForm extends React.Component {
                     />
 
                     <TextField
-                        required
+                        
                         id="siteZip"
                         label="Site Zip Code"
                         className={classes.textField}
@@ -293,7 +292,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="signature"
                         label="Signature"
                         className={classes.textField}
@@ -306,7 +305,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="date"
                         label="Date"
                         className={classes.textField}
@@ -319,7 +318,7 @@ class ProjectForm extends React.Component {
 
                 <ListItem>
                     <TextField
-                        required
+                        
                         id="printedName"
                         label="Printed Name and Title"
                         className={classes.textField}
@@ -340,7 +339,6 @@ class ProjectForm extends React.Component {
                 </ListItem>
 
             </form>
-        </Paper>
     );
   }
 }

@@ -2,62 +2,45 @@ module.exports = function(sequelize, Sequelize) {
     const Project = sequelize.define("project", {
         project_name: {
             type: Sequelize.STRING,
-            allowNull: false,
+            
         },
         authorize_utility: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false
+            type: Sequelize.STRING,
         },
         funds_requested: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            validate: {
-                isCurrency: true
-            }
+            type: Sequelize.STRING,
+            
+
         },
         additional_funds: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
-            validate: {
-                isCurrency: true
-            }
+            type: Sequelize.STRING,
+            
+  
         },
         total_cost: {
             type: Sequelize.STRING,
-            allowNull: false,
-            validate: {
-                isCurrency: true
-            }
+            
+
         },
         start_date: {
-            type: Sequelize.DATEONLY,
-            allowNull: false,
-            validate: {
-                isDate: true
-            }
+            type: Sequelize.STRING,
+            
         },
         end_date: {
-            type: Sequelize.DATEONLY,
-            allowNull: false,
-            validate: {
-                isDate: true
-            }
+            type: Sequelize.STRING,
+            
         },
         description: {
-            type: Sequelize.TEXT,
-            allowNull: false,
+            type: Sequelize.STRING,
+            
         },
         signature: {
             type: Sequelize.STRING,
-            allowNull: false,
+            
         },
         status: {
             type: Sequelize.STRING,
-            allowNull: false,
-            validate: {
-                isIn: ["Approved", "Denied", "Pending", "Utility Information Requested", "Completed"]
-            }
+            
         },
     });
     return Project;

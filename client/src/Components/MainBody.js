@@ -2,8 +2,7 @@ import React from 'react';
 import Dashboard from "./Dashboard";
 import ProfileForm from "./ProfileForm";
 import ProjectForm from "./ProjectForm";
-import DisbursementRequestForm from "./DisbursementRequestForm";
-import NewDisbursement from "./NewDisbursement"
+
 import {
 	BrowserRouter as Router,
 	Route,
@@ -12,6 +11,7 @@ import {
 	Redirect
 } from 'react-router-dom'
 import DisbursementLanding from './DisbursementLanding';
+import ProjectLanding from "./ProjectLanding"
 
 
 const MainBody = () => {
@@ -21,7 +21,7 @@ const MainBody = () => {
                 <Route path="/" exact={true} component={Dashboard} />
                 <Route path="/home" exact={true} component={Dashboard} />
                 <Route path="/profile" exact={true} component={ProfileForm} />
-                <Route path="/project" exact={true} component={ProjectForm} />
+                <Route path="/project" exact={true} component={ProjectLanding} />
                 <Route path="/disbursement" exact={true} component={DisbursementLanding} />
             </div>
         </Router>

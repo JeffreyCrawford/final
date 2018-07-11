@@ -74,7 +74,6 @@ class DisbursementRequestForm extends React.Component {
     const { classes } = this.props;
 
     return (
-		<Paper className={classes.paper} elevation={1}>
 			<form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
 				<ListItem>
 					<TextField
@@ -152,7 +151,6 @@ class DisbursementRequestForm extends React.Component {
 				</ListItem>
 	
 			</form>
-		</Paper>
     );
   }
 }
